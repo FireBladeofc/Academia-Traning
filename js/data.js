@@ -114,7 +114,6 @@ const EXERCISE_IMAGES = {
   'lombares-001': 'assets/images/exercises/hiperextensao.png',
   'lombares-002': 'assets/images/exercises/good_morning.png',
   'lombares-003': 'assets/images/exercises/stiff_barra.png',
-  'lombares-004': 'assets/images/exercises/superman_exercicio.png',
   // Glúteos
   'gluteos-001': 'assets/images/exercises/hip_thrust.png',
   'gluteos-002': 'assets/images/exercises/gluteo_maquina_coice.png',
@@ -127,14 +126,9 @@ const EXERCISE_IMAGES = {
   'isquiotibiais-003': 'assets/images/exercises/stiff_halteres.png',
   // Panturrilhas
   'panturrilhas-001': 'assets/images/exercises/panturrilha_pe.png',
-  'panturrilhas-002': 'assets/images/exercises/panturrilha_sentado.png',
   'panturrilhas-003': 'assets/images/exercises/panturrilha_leg_press.png',
   // Cardio
   'cardio-001': 'assets/images/exercises/cardio_esteira.png',
-  'cardio-002': 'assets/images/exercises/cardio_bicicleta.png',
-  'cardio-003': 'assets/images/exercises/cardio_eliptico.png',
-  'cardio-004': 'assets/images/exercises/cardio_pular_corda.png',
-  'cardio-005': 'assets/images/exercises/cardio_burpees.png',
   // === SMITH MACHINE & NOVOS ===
   'peitoral-007': 'assets/images/exercises/supino_smith_reto.png',
   'peitoral-008': 'assets/images/exercises/supino_smith_inclinado.png',

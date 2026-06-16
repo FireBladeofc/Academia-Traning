@@ -12,7 +12,7 @@ const StorageManager = {
   },
 
   // Incremente este número toda vez que o plano padrão mudar
-  CURRENT_PLAN_VERSION: 2,
+  CURRENT_PLAN_VERSION: 3,
 
   /**
    * Verifica se o plano de treino está na versão atual.
