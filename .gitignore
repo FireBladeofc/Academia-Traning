@@ -26,3 +26,5 @@ build/
 
 # Gemini / AI tooling
 .gemini/
+
+.vercel
