@@ -59,7 +59,10 @@ const ExerciseCard = {
   render(exercise) {
     const isFav = StorageManager.isFavorite(exercise.id);
     const equipmentName = EQUIPMENT[exercise.equipment] || '';
-    const imagePath = getExerciseImage(exercise.id);
+    let imagePath = getExerciseImage(exercise.id);
+    if (Array.isArray(imagePath)) {
+      imagePath = imagePath[0];
+    }
 
     const imageContent = imagePath
       ? `<img src="${imagePath}" alt="${exercise.name}" loading="lazy" onerror="this.parentElement.innerHTML = ExerciseCard.getPlaceholderSVG(EXERCISES.find(e => e.id === '${exercise.id}'))">`
