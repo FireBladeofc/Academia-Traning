@@ -376,7 +376,7 @@
 }
 .exercise-frame.contraction-biceps,
 .exercise-frame.contraction-antebracos {
-  transform: rotate(-4deg) scale(1.05) translateY(-3px);
+  transform: scale(1.05) translateY(-5px);
   transform-origin: center bottom;
 }
 .exercise-frame.contraction-dorsais,
@@ -395,7 +395,7 @@
 .exercise-frame.contraction-lombares,
 .exercise-frame.contraction-isquiotibiais,
 .exercise-frame.contraction-gluteos {
-  transform: rotate(-3deg) translateY(2px) scale(0.98);
+  transform: translateY(8px) scaleY(0.95);
 }
 .exercise-frame.contraction-panturrilhas {
   transform: translateY(-10px) scaleY(1.03);
