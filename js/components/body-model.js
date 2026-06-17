@@ -95,28 +95,19 @@ const BodyModel = {
     const hudTip = document.getElementById('hud-muscle-tip');
     const hudEmoji = document.querySelector('.hud-muscle-emoji');
 
-    const updateHUD = (muscleId, isSelection = false) => {
+    const updateHUD = (muscleId) => {
       const muscle = MUSCLE_GROUPS[muscleId];
       if (muscle) {
         if (hudName) hudName.textContent = muscle.name;
         if (hudEmoji) hudEmoji.textContent = muscle.emoji || '💪';
         if (hudTip) {
-          if (isSelection) {
-            hudTip.innerHTML = `Toque novamente para ver exercícios <span class="tip-arrow">→</span>`;
-            hudTip.classList.add('confirm-mode');
-          } else {
-            hudTip.textContent = 'Clique para ver os exercícios';
-            hudTip.classList.remove('confirm-mode');
-          }
+          hudTip.innerHTML = `Toque para ver exercícios <span class="tip-arrow">→</span>`;
+          hudTip.classList.remove('confirm-mode');
         }
       }
     };
 
     const resetHUD = () => {
-      if (this.selectedMuscleId) {
-        updateHUD(this.selectedMuscleId, true);
-        return;
-      }
       if (hudName) hudName.textContent = 'Selecione um músculo';
       if (hudEmoji) hudEmoji.textContent = '🏋️';
       if (hudTip) {
@@ -131,9 +122,7 @@ const BodyModel = {
       // HOVER (Desktop)
       path.addEventListener('mouseenter', () => {
         const muscleId = path.dataset.muscle;
-        if (!this.selectedMuscleId) {
-          updateHUD(muscleId, false);
-        }
+        updateHUD(muscleId);
         path.classList.add('hovered');
       });
 
@@ -142,34 +131,20 @@ const BodyModel = {
         resetHUD();
       });
 
-      // CLICK / TOUCH
+      // CLICK / TOUCH — 1 clique navega diretamente (desktop e mobile)
       path.addEventListener('click', (e) => {
         e.stopPropagation();
         const muscleId = path.dataset.muscle;
         if (!muscleId) return;
 
-        // Check if device supports hover
-        const hasHover = window.matchMedia('(hover: hover)').matches;
+        // Highlight briefly before navigating
+        paths.forEach(p => p.classList.remove('selected'));
+        path.classList.add('selected');
+        this.selectedMuscleId = muscleId;
 
-        if (hasHover) {
-          // Desktop flow: click once to navigate
-          App.navigateTo('exercise-list', { muscleGroup: muscleId });
-        } else {
-          // Mobile/Touch flow: double tap to confirm
-          if (this.selectedMuscleId === muscleId) {
-            // Second tap: navigate
-            App.navigateTo('exercise-list', { muscleGroup: muscleId });
-            this.selectedMuscleId = null;
-          } else {
-            // First tap: select and show confirmation hint
-            // Deselect other paths
-            paths.forEach(p => p.classList.remove('selected'));
-            path.classList.add('selected');
-            this.selectedMuscleId = muscleId;
-            updateHUD(muscleId, true);
-            App.showToast(`Músculo selecionado: ${MUSCLE_GROUPS[muscleId]?.name || muscleId}`, 'success');
-          }
-        }
+        // Navigate immediately on single click/tap
+        App.navigateTo('exercise-list', { muscleGroup: muscleId });
+        this.selectedMuscleId = null;
       });
     });
 

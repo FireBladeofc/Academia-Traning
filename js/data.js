@@ -11,134 +11,182 @@
 // Exercises without an entry here will show a styled SVG placeholder.
 // ====================================
 const EXERCISE_IMAGES = {
-  // Ombros
-  'ombros-001': [
+  // ── OMBROS ────────────────────────────────────────────
+  'ombros-001': [                                           // Desenvolvimento com Halteres
     'assets/images/exercises/desenvolvimento_halteres_start.png',
     'assets/images/exercises/desenvolvimento_halteres_end.png'
   ],
-  'ombros-002': [
+  'ombros-002': [                                           // Elevação Lateral
     'assets/images/exercises/elevacao_lateral_start.png',
     'assets/images/exercises/elevacao_lateral_end.png'
   ],
-  'ombros-003': 'assets/images/exercises/elevacao_frontal_halteres.png',
-  'ombros-004': 'assets/images/exercises/arnold_press.png',
-  'ombros-005': 'assets/images/exercises/desenvolvimento_militar.png',
-  'ombros-006': 'assets/images/exercises/elevacao_lateral_polia.png',
-  'ombros-007': 'assets/images/exercises/crucifixo_inverso.png',
-  // Peitoral
-  'peitoral-001': [
+  'ombros-003': 'assets/images/exercises/elevacao_frontal_halteres.png', // Elevação Frontal
+  'ombros-004': 'assets/images/exercises/arnold_press.png',              // Arnold Press
+  'ombros-005': 'assets/images/exercises/desenvolvimento_militar.png',   // Desenvolvimento Militar
+  'ombros-006': 'assets/images/exercises/elevacao_lateral_polia.png',    // Elevação Lateral Polia
+  'ombros-007': 'assets/images/exercises/crucifixo_inverso.png',         // Crucifixo Inverso
+  'ombros-008': 'assets/images/exercises/desenvolvimento_smith.png',     // Desenvolvimento no Smith
+  'ombros-009': 'assets/images/exercises/crucifixo_inverso_polia.png',   // Crucifixo Inverso Polia
+
+  // ── PEITORAL ──────────────────────────────────────────
+  'peitoral-001': [                                         // Supino Reto com Barra
     'assets/images/exercises/supino_reto_start.png',
     'assets/images/exercises/supino_reto_end.png'
   ],
-  'peitoral-002': 'assets/images/exercises/supino_inclinado_halteres.png',
-  'peitoral-003': [
+  'peitoral-002': [                                         // Supino Inclinado Halteres (animado)
+    'assets/images/exercises/supino_inclinado_halteres_start.png',
+    'assets/images/exercises/supino_inclinado_halteres_end.png'
+  ],
+  'peitoral-003': [                                         // Crucifixo com Halteres
     'assets/images/exercises/crucifixo_halteres_start.png',
     'assets/images/exercises/crucifixo_halteres_end.png'
   ],
-  'peitoral-004': [
+  'peitoral-004': [                                         // Crossover Polia Alta
     'assets/images/exercises/crossover_polia_start.png',
     'assets/images/exercises/crossover_polia_end.png'
   ],
-  'peitoral-005': 'assets/images/exercises/flexao_de_braco.png',
-  'peitoral-006': 'assets/images/exercises/pullover_halter.png',
-  // Bíceps
-  'biceps-001': [
+  'peitoral-005': [                                         // Flexão de Braço (animado)
+    'assets/images/exercises/flexao_de_braco_start.png',
+    'assets/images/exercises/flexao_de_braco_end.png'
+  ],
+  'peitoral-006': 'assets/images/exercises/pullover_halter.png',          // Pullover com Halter
+  'peitoral-007': 'assets/images/exercises/supino_smith_reto.png',        // Supino Reto no Smith
+  'peitoral-008': 'assets/images/exercises/supino_smith_inclinado.png',   // Supino Inclinado no Smith
+
+  // ── BÍCEPS ────────────────────────────────────────────
+  'biceps-001': [                                           // Rosca Direta Barra
     'assets/images/exercises/rosca_direta_barra_start.png',
     'assets/images/exercises/rosca_direta_barra_end.png'
   ],
-  'biceps-002': 'assets/images/exercises/rosca_alternada.png',
-  'biceps-003': 'assets/images/exercises/rosca_martelo.png',
-  'biceps-004': 'assets/images/exercises/rosca_scott.png',
-  'biceps-005': 'assets/images/exercises/rosca_direta_polia.png',
-  'biceps-006': 'assets/images/exercises/rosca_concentrada.png',
-  // Abdômen
-  'abdomen-001': 'assets/images/exercises/crunch_abdominal.png',
-  'abdomen-002': 'assets/images/exercises/prancha_plank.png',
-  'abdomen-003': 'assets/images/exercises/elevacao_de_pernas.png',
-  'abdomen-004': 'assets/images/exercises/abdominal_bicicleta.png',
-  'abdomen-005': 'assets/images/exercises/abdominal_maquina.png',
-  // Oblíquos
-  'obliquos-001': 'assets/images/exercises/rotacao_russa.png',
-  'obliquos-002': 'assets/images/exercises/prancha_lateral.png',
-  'obliquos-003': 'assets/images/exercises/inclinacao_lateral_halter.png',
-  'obliquos-004': 'assets/images/exercises/woodchop_polia.png',
-  // Antebraços
-  'antebracos-001': 'assets/images/exercises/rosca_punho.png',
-  'antebracos-002': 'assets/images/exercises/rosca_inversa_punho.png',
-  'antebracos-003': 'assets/images/exercises/farmers_walk.png',
-  // Abdutores
-  'abdutores-001': 'assets/images/exercises/abducao_maquina.png',
-  'abdutores-002': 'assets/images/exercises/abducao_elastico.png',
-  // Adutores
-  'adutores-001': 'assets/images/exercises/aducao_maquina.png',
-  'adutores-002': 'assets/images/exercises/agachamento_sumo.png',
-  // Quadríceps
-  'quadriceps-001': [
+  'biceps-002': [                                           // Rosca Alternada (animado)
+    'assets/images/exercises/rosca_alternada_start.png',
+    'assets/images/exercises/rosca_alternada_end.png'
+  ],
+  'biceps-003': [                                           // Rosca Martelo (animado)
+    'assets/images/exercises/rosca_martelo_start.png',
+    'assets/images/exercises/rosca_martelo_end.png'
+  ],
+  'biceps-004': 'assets/images/exercises/rosca_scott.png',        // Rosca Scott
+  'biceps-005': 'assets/images/exercises/rosca_direta_polia.png', // Rosca Direta Polia
+  'biceps-006': 'assets/images/exercises/rosca_concentrada.png',  // Rosca Concentrada
+
+  // ── ABDÔMEN ───────────────────────────────────────────
+  'abdomen-001': [                                          // Crunch Abdominal (animado)
+    'assets/images/exercises/crunch_abdominal_start.png',
+    'assets/images/exercises/crunch_abdominal.png'
+  ],
+  'abdomen-002': 'assets/images/exercises/prancha_plank.png',         // Prancha (Plank)
+  'abdomen-003': 'assets/images/exercises/elevacao_de_pernas.png',    // Elevação de Pernas
+  'abdomen-004': 'assets/images/exercises/abdominal_bicicleta.png',   // Bicicleta Crunch
+  'abdomen-005': 'assets/images/exercises/abdominal_maquina.png',     // Abdominal Máquina
+
+  // ── OBLÍQUOS ──────────────────────────────────────────
+  'obliquos-001': 'assets/images/exercises/rotacao_russa.png',            // Rotação Russa
+  'obliquos-002': 'assets/images/exercises/prancha_lateral.png',          // Prancha Lateral
+  'obliquos-003': 'assets/images/exercises/inclinacao_lateral_halter.png',// Inclinação Lateral
+  'obliquos-004': 'assets/images/exercises/woodchop_polia.png',           // Woodchop Polia
+
+  // ── ANTEBRAÇOS ────────────────────────────────────────
+  'antebracos-001': 'assets/images/exercises/rosca_punho.png',        // Rosca de Punho
+  'antebracos-002': 'assets/images/exercises/rosca_inversa_punho.png',// Rosca Inversa Punho
+  'antebracos-003': 'assets/images/exercises/farmers_walk.png',       // Farmer's Walk
+
+  // ── ABDUTORES ─────────────────────────────────────────
+  'abdutores-001': 'assets/images/exercises/abducao_maquina.png', // Abdução Máquina
+  'abdutores-002': 'assets/images/exercises/abducao_elastico.png', // Abdução Elástico
+
+  // ── ADUTORES ──────────────────────────────────────────
+  'adutores-001': 'assets/images/exercises/aducao_maquina.png',    // Adução Máquina
+  'adutores-002': 'assets/images/exercises/agachamento_sumo.png',  // Agachamento Sumô
+
+  // ── QUADRÍCEPS ────────────────────────────────────────
+  'quadriceps-001': [                                       // Agachamento Livre (animado)
     'assets/images/exercises/agachamento_livre_start.png',
     'assets/images/exercises/agachamento_livre_end.png'
   ],
-  'quadriceps-002': 'assets/images/exercises/leg_press_45.png',
-  'quadriceps-003': 'assets/images/exercises/cadeira_extensora.png',
-  'quadriceps-004': 'assets/images/exercises/agachamento_frontal.png',
-  'quadriceps-005': 'assets/images/exercises/hack_squat.png',
-  // Tríceps
-  'triceps-001': 'assets/images/exercises/triceps_frances.png',
-  'triceps-002': [
+  'quadriceps-002': 'assets/images/exercises/leg_press_45.png',      // Leg Press 45°
+  'quadriceps-003': 'assets/images/exercises/cadeira_extensora.png', // Cadeira Extensora
+  'quadriceps-004': 'assets/images/exercises/agachamento_frontal.png',// Agachamento Frontal
+  'quadriceps-005': 'assets/images/exercises/hack_squat.png',        // Hack Squat
+  'quadriceps-006': [                                       // Agachamento Smith (animado)
+    'assets/images/exercises/agachamento_smith_start.png',
+    'assets/images/exercises/agachamento_smith_end.png'
+  ],
+
+  // ── TRÍCEPS ───────────────────────────────────────────
+  'triceps-001': 'assets/images/exercises/triceps_frances.png',      // Tríceps Francês (Barra)
+  'triceps-002': [                                          // Tríceps Corda Polia (animado)
     'assets/images/exercises/triceps_corda_start.png',
     'assets/images/exercises/triceps_corda_end.png'
   ],
-  'triceps-003': 'assets/images/exercises/mergulho_triceps.png',
-  'triceps-004': [
+  'triceps-003': 'assets/images/exercises/mergulho_triceps.png',     // Mergulho (Dips)
+  'triceps-004': [                                          // Kickback com Halter (animado)
     'assets/images/exercises/triceps_kickback_start.png',
     'assets/images/exercises/triceps_kickback_end.png'
   ],
-  'triceps-005': 'assets/images/exercises/triceps_testa_halteres.png',
-  'triceps-006': 'assets/images/exercises/triceps_pulley_barra.png',
-  'triceps-007': 'assets/images/exercises/mergulho_banco.png',
-  // Trapézio
-  'trapezio-001': 'assets/images/exercises/encolhimento_halteres.png',
-  'trapezio-002': 'assets/images/exercises/encolhimento_barra.png',
-  'trapezio-003': 'assets/images/exercises/remada_alta.png',
-  // Dorsais
-  'dorsais-001': [
+  'triceps-005': 'assets/images/exercises/triceps_testa_halteres.png',// Tríceps Testa Halteres
+  'triceps-006': 'assets/images/exercises/triceps_pulley_barra.png', // Tríceps Pulley Barra
+  'triceps-007': 'assets/images/exercises/mergulho_banco.png',       // Mergulho no Banco
+  'triceps-008': [                                          // Tríceps Francês Halter (animado)
+    'assets/images/exercises/triceps_frances_halter_start.png',
+    'assets/images/exercises/triceps_frances_halter_end.png'
+  ],
+
+  // ── TRAPÉZIO ──────────────────────────────────────────
+  'trapezio-001': 'assets/images/exercises/encolhimento_halteres.png',// Encolhimento Halteres
+  'trapezio-002': 'assets/images/exercises/encolhimento_barra.png',   // Encolhimento Barra
+  'trapezio-003': 'assets/images/exercises/remada_alta.png',          // Remada Alta
+
+  // ── DORSAIS ───────────────────────────────────────────
+  'dorsais-001': [                                          // Puxada Frontal (animado)
     'assets/images/exercises/puxada_frontal_start.png',
     'assets/images/exercises/puxada_frontal_end.png'
   ],
-  'dorsais-002': 'assets/images/exercises/remada_curvada.png',
-  'dorsais-003': 'assets/images/exercises/remada_unilateral_halter.png',
-  'dorsais-004': 'assets/images/exercises/barra_fixa_pullup.png',
-  'dorsais-005': 'assets/images/exercises/pulldown_pegada_fechada.png',
-  'dorsais-006': 'assets/images/exercises/remada_baixa_polia.png',
-  'dorsais-007': 'assets/images/exercises/pulldown_polia.png',
-  // Lombares
-  'lombares-001': 'assets/images/exercises/hiperextensao.png',
-  'lombares-002': 'assets/images/exercises/good_morning.png',
-  'lombares-003': 'assets/images/exercises/stiff_barra.png',
-  // Glúteos
-  'gluteos-001': 'assets/images/exercises/hip_thrust.png',
-  'gluteos-002': 'assets/images/exercises/gluteo_maquina_coice.png',
-  'gluteos-003': 'assets/images/exercises/ponte_gluteos.png',
-  'gluteos-004': 'assets/images/exercises/agachamento_bulgaro.png',
-  'gluteos-005': 'assets/images/exercises/avanco_lunge.png',
-  // Isquiotibiais
-  'isquiotibiais-001': 'assets/images/exercises/mesa_flexora.png',
-  'isquiotibiais-002': 'assets/images/exercises/cadeira_flexora.png',
-  'isquiotibiais-003': 'assets/images/exercises/stiff_halteres.png',
-  // Panturrilhas
-  'panturrilhas-001': 'assets/images/exercises/panturrilha_pe.png',
-  'panturrilhas-003': 'assets/images/exercises/panturrilha_leg_press.png',
-  // Cardio
-  'cardio-001': 'assets/images/exercises/cardio_esteira.png',
-  // === SMITH MACHINE & NOVOS ===
-  'peitoral-007': 'assets/images/exercises/supino_smith_reto.png',
-  'peitoral-008': 'assets/images/exercises/supino_smith_inclinado.png',
-  'quadriceps-006': 'assets/images/exercises/agachamento_smith.png',
-  'gluteos-006': 'assets/images/exercises/afundo_halteres.png',
-  'ombros-008': 'assets/images/exercises/desenvolvimento_smith.png',
-  'ombros-009': 'assets/images/exercises/crucifixo_inverso_polia.png',
-  'dorsais-008': 'assets/images/exercises/remada_baixa_maquina.png',
-  'dorsais-009': 'assets/images/exercises/puxada_alta_polia.png',
-  'triceps-008': 'assets/images/exercises/triceps_frances_halter.png',
+  'dorsais-002': 'assets/images/exercises/remada_curvada.png',           // Remada Curvada
+  'dorsais-003': 'assets/images/exercises/remada_unilateral_halter.png', // Remada Unilateral
+  'dorsais-004': 'assets/images/exercises/barra_fixa_pullup.png',        // Barra Fixa Pull-up
+  'dorsais-005': 'assets/images/exercises/pulldown_pegada_fechada.png',  // Pulldown Pegada Fechada
+  'dorsais-006': 'assets/images/exercises/remada_baixa_polia.png',       // Remada Baixa Polia
+  'dorsais-007': 'assets/images/exercises/pulldown_polia.png',           // Pulldown Polia
+  'dorsais-008': [                                          // Remada Baixa Máquina (animado)
+    'assets/images/exercises/remada_baixa_maquina_start.png',
+    'assets/images/exercises/remada_baixa_maquina_end.png'
+  ],
+  'dorsais-009': [                                          // Puxada Alta Polia (animado)
+    'assets/images/exercises/puxada_alta_polia_start.png',
+    'assets/images/exercises/puxada_alta_polia_end.png'
+  ],
+
+  // ── LOMBARES ──────────────────────────────────────────
+  'lombares-001': 'assets/images/exercises/hiperextensao.png',  // Hiperextensão
+  'lombares-002': 'assets/images/exercises/good_morning.png',   // Good Morning
+  'lombares-003': 'assets/images/exercises/stiff_barra.png',    // Stiff (Pernas Rígidas)
+  // lombares-004 Superman — sem arquivo de imagem disponível
+
+  // ── GLÚTEOS ───────────────────────────────────────────
+  'gluteos-001': 'assets/images/exercises/hip_thrust.png',           // Hip Thrust
+  'gluteos-002': 'assets/images/exercises/gluteo_maquina_coice.png', // Glúteo Máquina Coice
+  'gluteos-003': 'assets/images/exercises/ponte_gluteos.png',        // Ponte de Glúteos
+  'gluteos-004': 'assets/images/exercises/agachamento_bulgaro.png',  // Agachamento Búlgaro
+  'gluteos-005': 'assets/images/exercises/avanco_lunge.png',         // Avanço (Lunge)
+  'gluteos-006': 'assets/images/exercises/afundo_halteres.png',      // Afundo com Halteres
+
+  // ── ISQUIOTIBIAIS ─────────────────────────────────────
+  'isquiotibiais-001': 'assets/images/exercises/mesa_flexora.png',   // Mesa Flexora
+  'isquiotibiais-002': 'assets/images/exercises/cadeira_flexora.png',// Cadeira Flexora
+  'isquiotibiais-003': 'assets/images/exercises/stiff_halteres.png', // Stiff com Halteres
+
+  // ── PANTURRILHAS ──────────────────────────────────────
+  'panturrilhas-001': 'assets/images/exercises/panturrilha_pe.png',      // Panturrilha em Pé
+  // panturrilhas-002 Panturrilha Sentado — sem arquivo disponível
+  'panturrilhas-003': 'assets/images/exercises/panturrilha_leg_press.png',// Panturrilha Leg Press
+
+  // ── CARDIO ────────────────────────────────────────────
+  'cardio-001': 'assets/images/exercises/cardio_esteira.png',  // Esteira
+  // cardio-002 Bicicleta Ergométrica — sem arquivo disponível
+  // cardio-003 Elíptico — sem arquivo disponível
+  // cardio-004 Pular Corda — sem arquivo disponível
+  // cardio-005 Burpees — sem arquivo disponível
 };
 
 /**

@@ -54,18 +54,34 @@ const ExerciseCard = {
   },
 
   /**
+   * Maps muscle group to the motion class for card thumbnails.
+   * Mirrors ExerciseDetailPage.MUSCLE_MOTION_CLASS.
+   */
+  MUSCLE_MOTION_CLASS: {
+    ombros: 'motion-raise', peitoral: 'motion-push', biceps: 'motion-curl',
+    triceps: 'motion-push', abdomen: 'motion-crunch', obliquos: 'motion-crunch',
+    antebracos: 'motion-curl', abdutores: 'motion-raise', adutores: 'motion-squat',
+    quadriceps: 'motion-squat', trapezio: 'motion-pull', dorsais: 'motion-pull',
+    lombares: 'motion-hinge', gluteos: 'motion-hinge', isquiotibiais: 'motion-hinge',
+    panturrilhas: 'motion-calf', cardio: 'motion-cardio',
+  },
+
+  /**
    * Render a single exercise card
    */
   render(exercise) {
     const isFav = StorageManager.isFavorite(exercise.id);
     const equipmentName = EQUIPMENT[exercise.equipment] || '';
     let imagePath = getExerciseImage(exercise.id);
-    if (Array.isArray(imagePath)) {
+    const isAnimated = Array.isArray(imagePath);
+    if (isAnimated) {
       imagePath = imagePath[0];
     }
 
+    const motionClass = isAnimated ? '' : (this.MUSCLE_MOTION_CLASS[exercise.muscleGroup] || 'motion-push');
+
     const imageContent = imagePath
-      ? `<img src="${imagePath}" alt="${exercise.name}" loading="lazy" onerror="this.parentElement.innerHTML = ExerciseCard.getPlaceholderSVG(EXERCISES.find(e => e.id === '${exercise.id}'))">`
+      ? `<img src="${imagePath}" alt="${exercise.name}" loading="lazy" class="card-img ${motionClass}" onerror="this.parentElement.innerHTML = ExerciseCard.getPlaceholderSVG(EXERCISES.find(e => e.id === '${exercise.id}'))">`
       : this.getPlaceholderSVG(exercise);
 
     return `

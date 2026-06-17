@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Gradiente Principal -->
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8944C" />
+      <stop offset="100%" stop-color="#D4793A" />
+    </linearGradient>
+    
+    <!-- Gradiente Secundário -->
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#26262C" />
+      <stop offset="100%" stop-color="#1E1E24" />
+    </linearGradient>
+
+    <!-- Sombra/Glow de Fundo -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Escudo Hexagonal/Shield de Fundo -->
+  <polygon points="256,40 430,130 430,370 256,470 82,370 82,130" 
+           fill="url(#shieldGrad)" 
+           stroke="url(#glowGrad)" 
+           stroke-width="8" 
+           filter="url(#neonGlow)" />
+
+  <!-- Detalhe interno do Escudo -->
+  <polygon points="256,65 410,145 410,355 256,445 102,355 102,145" 
+           fill="none" 
+           stroke="#ffffff" 
+           stroke-width="1.5" 
+           opacity="0.15" />
+
+  <!-- Asas de Músculo / Arcos de Força -->
+  <g transform="translate(0, -10)">
+    <!-- Asa Esquerda -->
+    <path d="M160 260 C120 220, 110 160, 190 170 C220 174, 230 200, 240 230 C220 230, 180 250, 160 260 Z" 
+          fill="url(#glowGrad)" opacity="0.85" />
+    <!-- Asa Direita -->
+    <path d="M352 260 C392 220, 402 160, 322 170 C292 174, 282 200, 272 230 C292 230, 332 250, 352 260 Z" 
+          fill="url(#glowGrad)" opacity="0.85" />
+  </g>
+
+  <!-- Halter Central (Dumbbell) -->
+  <g transform="translate(256, 256) rotate(45)">
+    <!-- Barra central (Handle) -->
+    <rect x="-120" y="-12" width="240" height="24" rx="8" fill="#FFFFFF" filter="url(#neonGlow)" />
+    <rect x="-120" y="-12" width="240" height="24" rx="8" fill="url(#glowGrad)" />
+    
+    <!-- Anéis de trava (Collar) -->
+    <rect x="-70" y="-22" width="12" height="44" rx="2" fill="#FFFFFF" opacity="0.9" />
+    <rect x="58" y="-22" width="12" height="44" rx="2" fill="#FFFFFF" opacity="0.9" />
+
+    <!-- Pesos da Esquerda (Hexagonal) -->
+    <polygon points="-75,-45 -105,-45 -125,-20 -125,20 -105,45 -75,45" fill="#131317" stroke="url(#glowGrad)" stroke-width="4" />
+    <polygon points="-85,-55 -120,-55 -145,-25 -145,25 -120,55 -85,55" fill="url(#glowGrad)" />
+    <!-- Detalhe interno do peso esquerdo -->
+    <polygon points="-90,-40 -115,-40 -130,-18 -130,18 -115,40 -90,40" fill="#131317" opacity="0.4" />
+
+    <!-- Pesos da Direita (Hexagonal) -->
+    <polygon points="75,-45 105,-45 125,-20 125,20 105,45 75,45" fill="#131317" stroke="url(#glowGrad)" stroke-width="4" />
+    <polygon points="85,-55 120,-55 145,-25 145,25 120,55 85,55" fill="url(#glowGrad)" />
+    <!-- Detalhe interno do peso direito -->
+    <polygon points="90,-40 115,-40 130,-18 130,18 115,40 90,40" fill="#131317" opacity="0.4" />
+  </g>
+
+  <!-- Núcleo de Força / Brilho Central -->
+  <circle cx="256" cy="256" r="16" fill="#FFFFFF" filter="url(#neonGlow)" />
+
+  <!-- Detalhe estético de textura na base -->
+  <path d="M 216,420 Q 256,435 296,420" fill="none" stroke="url(#glowGrad)" stroke-width="4" stroke-linecap="round" opacity="0.7" />
+</svg>

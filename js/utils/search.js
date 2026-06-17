@@ -39,13 +39,13 @@ const SearchUtils = {
   },
 
   /**
-   * Filter exercises by muscle group
+   * Filter exercises by muscle group (primary only)
+   * Only exercises where muscleGroup === muscleGroupId are shown.
+   * Secondary muscle matches are intentionally excluded to avoid
+   * showing exercises under the wrong category.
    */
   filterByMuscleGroup(muscleGroupId, exercises = EXERCISES) {
-    return exercises.filter(ex =>
-      ex.muscleGroup === muscleGroupId ||
-      (ex.secondaryMuscles && ex.secondaryMuscles.includes(muscleGroupId))
-    );
+    return exercises.filter(ex => ex.muscleGroup === muscleGroupId);
   },
 
   /**

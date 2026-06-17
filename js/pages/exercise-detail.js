@@ -6,6 +6,30 @@ const ExerciseDetailPage = {
   currentExercise: null,
 
   /**
+   * Maps each muscle group to the CSS motion animation class
+   * that best represents its primary movement pattern.
+   */
+  MUSCLE_MOTION_CLASS: {
+    ombros:        'motion-raise',
+    peitoral:      'motion-push',
+    biceps:        'motion-curl',
+    triceps:       'motion-push',
+    abdomen:       'motion-crunch',
+    obliquos:      'motion-crunch',
+    antebracos:    'motion-curl',
+    abdutores:     'motion-raise',
+    adutores:      'motion-squat',
+    quadriceps:    'motion-squat',
+    trapezio:      'motion-pull',
+    dorsais:       'motion-pull',
+    lombares:      'motion-hinge',
+    gluteos:       'motion-hinge',
+    isquiotibiais: 'motion-hinge',
+    panturrilhas:  'motion-calf',
+    cardio:        'motion-cardio',
+  },
+
+  /**
    * Called when page becomes active
    */
   onEnter(params = {}) {
@@ -53,7 +77,12 @@ const ExerciseDetailPage = {
           </div>
         `;
       } else {
-        heroContent = `<img src="${imagePath}" alt="${exercise.name}" class="exercise-static-img">`;
+        heroContent = `
+          <div class="exercise-animation-container">
+            <img src="${imagePath}" class="exercise-frame active" alt="${exercise.name} - Frame 1">
+            <img src="${imagePath}" class="exercise-frame contraction-${exercise.muscleGroup}" alt="${exercise.name} - Frame 2">
+          </div>
+        `;
       }
     } else {
       heroContent = `<div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
